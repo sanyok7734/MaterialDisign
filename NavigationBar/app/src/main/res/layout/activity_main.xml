@@ -1,0 +1,256 @@
+<android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/my_drawer_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+    <!-- Your normal content view -->
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <!-- We use a Toolbar so that our drawer can be displayed
+             in front of the action bar -->
+        <android.support.v7.widget.Toolbar
+                android:id="@+id/my_awesome_toolbar"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:minHeight="?attr/actionBarSize"
+                android:background="@color/actionBar"
+                />
+
+        <!-- The rest of your content view -->
+        <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <FrameLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/defolt"/>
+
+
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@drawable/toolbar_dropshadow"/>
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <!-- Your drawer view. This can be any view, LinearLayout
+         is just an example. As we have set fitSystemWindows=true
+         this will be displayed under the status bar. -->
+    <ScrollView android:layout_width="260dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="left|start"
+                android:background="@color/defolt"
+            >
+    <LinearLayout
+            android:layout_width="260dp"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:orientation="vertical"
+            android:background="@color/defolt">
+
+        <!-- Your drawer content -->
+        <!-- Header-->
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="136dp"
+                    android:orientation="vertical"
+                    android:background="@color/actionBar"
+                    android:paddingLeft="16dp"
+                    android:elevation="20dp">
+                <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/imageView"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/ava"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="16dp"
+                        />
+                <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:orientation="vertical"
+                        android:gravity="center">
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="See Serials"
+                            android:textSize="16sp"
+                            android:textColor="#fff"
+                            android:textAppearance="?android:attr/textAppearanceMedium"
+                            android:textStyle="bold"/>
+                    <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:text="schedule TV series"
+                            android:textSize="14sp"
+                            android:textColor="#fff"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--Content-->
+            <LinearLayout
+                    android:id="@+id/listItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:onClick="onItemClick"
+                    android:paddingLeft="16dp"
+                    >
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/list"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="List serial"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        android:alpha="0.67"
+                        android:layout_marginLeft="16dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/favoriteItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:orientation="horizontal"
+                    android:onClick="onItemClick"
+                    android:paddingLeft="16dp">
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/favorite"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="Favorite"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        android:alpha="0.67"
+                        android:layout_marginLeft="16dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"/>
+            </LinearLayout>
+            <LinearLayout
+                    android:id="@+id/breakItem"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:onClick="onItemClick"
+                    android:paddingLeft="16dp">
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/b"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="At the break"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        android:alpha="0.67"
+                        android:layout_marginLeft="16dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!--separator-->
+            <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.6dp"
+                    android:background="#000"
+                    android:alpha="0.23"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"/>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:paddingLeft="16dp">
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/setings"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="Settings"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        android:alpha="0.67"
+                        android:layout_marginLeft="16dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:clickable="true"
+                    android:orientation="horizontal"
+                    android:paddingLeft="16dp">
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:src="@drawable/help"
+                        android:layout_marginBottom="8dp"
+                        android:layout_marginTop="8dp"
+                        />
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="About"
+                        android:textSize="14sp"
+                        android:textColor="#000"
+                        android:alpha="0.67"
+                        android:layout_marginLeft="16dp"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:textStyle="bold"/>
+            </LinearLayout>
+
+    </LinearLayout>
+    </ScrollView>
+
+</android.support.v4.widget.DrawerLayout>

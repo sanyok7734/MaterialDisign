@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="defolt">#fff</color>
+    <color name="actionBar">#4CAF50</color>
+    <color name="selectItem">#ffe3e3e3</color>
+    <color name="fab">#E91E63</color>
+    <color name="gradient_start">#000000</color>
+
+
+    <color name="primary">#4CAF50</color>
+    <color name="primaryDark">#4CAF50</color>
+    <color name="accent">#ffeeff72</color>
+    <color name="accentLight">#eeff41</color>
+</resources>
